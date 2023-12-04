@@ -15,6 +15,9 @@ module.exports = {
           background: "#f7fafc",
         },
       },
+      maxWidth: {
+        img: "185px",
+      },
     },
   },
   plugins: [],

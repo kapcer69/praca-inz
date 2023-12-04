@@ -1,11 +1,13 @@
-<div>
-  <img [src]="product.image" [alt]="product.title" />
+<div
+  class="bg-white flex rounded-md p-4 gap-8 mb-4 border border-gray-300 max-h-48"
+>
+  <img [src]="product.image" class="max-h-44 max-w-img" [alt]="product.title" />
   <div>
-    <h4>{{ product.title }}</h4>
-    <h3>${{ product.price }}</h3>
-    <p>
+    <h4 class="font-medium">{{ product.title }}</h4>
+    <h3 class="font-bold">${{ product.price }}</h3>
+    <p class="line-clamp-2">
       {{ product.description }}
     </p>
-    <a href="#">View details</a>
+    <a href="#" class="text-blue font-medium">View details</a>
   </div>
 </div>
