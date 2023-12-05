@@ -1,13 +1,15 @@
 <div
-  class="bg-white flex rounded-md p-4 gap-8 mb-4 border border-gray-300 max-h-48"
+  class="bg-white flex rounded-md py-4 pl-4 pr-20 gap-8 mb-4 border border-gray-300 max-h-48"
 >
   <img [src]="product.image" class="max-h-44 max-w-img" [alt]="product.title" />
   <div>
-    <h4 class="font-medium">{{ product.title }}</h4>
-    <h3 class="font-bold">${{ product.price }}</h3>
-    <p class="line-clamp-2">
+    <p class="font-medium mb-3">{{ product.title }}</p>
+    <h3 class="font-bold mb-3 text-xl">${{ product.price }}</h3>
+    <p class="line-clamp-2 mb-2.5">
       {{ product.description }}
     </p>
-    <a href="#" class="text-blue font-medium">View details</a>
+    <a href="#" class="text-blue font-medium hover:text-blueHover"
+      >View details</a
+    >
   </div>
 </div>

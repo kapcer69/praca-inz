@@ -1,1 +1,4 @@
-<p>product-filters works!</p>
+<button class="mb-5 font-semibold">Category</button>
+@for (category of categories; track $index) {
+<a href="#" class="block capitalize whitespace-nowrap mb-2">{{ category }}</a>
+}

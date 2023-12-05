@@ -14,12 +14,16 @@ import { ProductFiltersComponent } from '../../components/product-filters/produc
 })
 export class ProductPageComponent {
   products!: ProductCard[];
+  categories!: string[];
 
   constructor(private readonly productApi: ProductApiService) {}
 
   ngOnInit(): void {
     this.productApi.getAllProducts().subscribe((products) => {
       this.products = products;
+    });
+    this.productApi.getAllCategories().subscribe((categories) => {
+      this.categories = categories;
     });
   }
 }
