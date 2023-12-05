@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import {
   faBrandFacebook,
@@ -11,7 +12,7 @@ import {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [NgIconComponent],
+  imports: [NgIconComponent, RouterLink, RouterLinkActive, RouterOutlet],
   providers: [
     provideIcons({
       faBrandFacebook,
