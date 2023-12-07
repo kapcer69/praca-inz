@@ -1,15 +1,15 @@
 <section>
-  <img src="" alt="" />
+  <img [src]="product.image" [alt]="product.title + 'image'" />
   <div>
-    <h4>fdxsdffgdjdfgjdfgjfjg</h4>
+    <h4>{{ product.title }}</h4>
     <div>
       <p>Price:</p>
-      <p>$99.99</p>
+      <p>{{ product.price }}</p>
     </div>
     <hr />
     <div>
       <p>Type:</p>
-      <p>Shoes</p>
+      <p>{{ product.category }}</p>
     </div>
     <hr />
     <div>
@@ -28,33 +28,5 @@
   </div>
 </section>
 <section>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum, quis
-    cupiditate at, voluptate nulla modi nam perspiciatis, minus nisi dolores
-    laudantium deleniti odit excepturi eos pariatur alias veniam error? Lorem
-    ipsum dolor sit amet consectetur adipisicing elit. Minus ad voluptas sunt
-    suscipit cum id voluptates optio aut quibusdam quidem. Non eum tempore
-    recusandae expedita suscipit, facilis quas quae placeat! Lorem, ipsum dolor
-    sit amet consectetur adipisicing elit. Accusantium corporis at, ratione
-    officia quo animi nam laborum corrupti quaerat modi, tenetur ut sunt
-    temporibus explicabo facilis veritatis ullam libero ducimus.
-  </p>
-  <table>
-    <tr>
-      <td>Model</td>
-      <td>#8786867</td>
-    </tr>
-    <tr>
-      <td>Style</td>
-      <td>Classic style</td>
-    </tr>
-    <tr>
-      <td>Size</td>
-      <td>34mm x 450mm x 19mm</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>36GB RAM</td>
-    </tr>
-  </table>
+  <p>{{ product.description }}</p>
 </section>

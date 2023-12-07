@@ -8,8 +8,10 @@
     <p class="line-clamp-2 mb-2.5">
       {{ product.description }}
     </p>
-    <a href="#" class="text-blue font-medium hover:text-blueHover"
-      >View details</a
-    >
+    <a
+      [routerLink]="['/details', product.id]"
+      class="text-blue font-medium hover:text-blueHover"
+      >View details
+    </a>
   </div>
 </div>

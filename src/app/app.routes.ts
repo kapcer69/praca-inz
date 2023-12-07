@@ -4,5 +4,5 @@ import { ProductDetailsPageComponent } from './products/pages/product-details-pa
 
 export const routes: Routes = [
   { path: '', component: ProductPageComponent },
-  { path: 'details', component: ProductDetailsPageComponent },
+  { path: 'details/:id', component: ProductDetailsPageComponent },
 ];

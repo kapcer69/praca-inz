@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductCard } from '../../models/product-card.model';
 import { ProductApiService } from '../../services/product-api.service';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
@@ -12,18 +12,18 @@ import { ProductFiltersComponent } from '../../components/product-filters/produc
   styleUrl: './product-page.component.css',
   providers: [ProductApiService],
 })
-export class ProductPageComponent {
+export class ProductPageComponent implements OnInit {
   products!: ProductCard[];
   categories!: string[];
 
   constructor(private readonly productApi: ProductApiService) {}
 
   ngOnInit(): void {
-    this.productApi.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
-    this.productApi.getAllCategories().subscribe((categories) => {
-      this.categories = categories;
-    });
+    this.productApi.products$.subscribe(
+      (products) => (this.products = products)
+    );
+    this.productApi.categories$.subscribe(
+      (categories) => (this.categories = categories)
+    );
   }
 }

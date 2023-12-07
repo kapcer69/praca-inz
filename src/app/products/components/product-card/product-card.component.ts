@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductMapperService } from '../../services/product-mapper.service';
 import { ProductCard } from '../../models/product-card.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
 })
