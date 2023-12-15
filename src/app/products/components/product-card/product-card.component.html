@@ -1,7 +1,11 @@
 <div
   class="bg-white flex rounded-md py-4 pl-4 pr-20 gap-8 mb-4 border border-gray-300 max-h-48"
 >
-  <img [src]="product.image" class="max-h-44 max-w-img" [alt]="product.title" />
+  <img
+    [src]="product.image"
+    class="max-h-44 max-w-img"
+    [alt]="product.title + 'image'"
+  />
   <div>
     <p class="font-medium mb-3">{{ product.title }}</p>
     <h3 class="font-bold mb-3 text-xl">${{ product.price }}</h3>
