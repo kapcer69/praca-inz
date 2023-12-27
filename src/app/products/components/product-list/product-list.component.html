@@ -4,5 +4,7 @@
   <app-product-card [product]="product" />
   } @empty {
   <p class="text-center">No products found!</p>
-  } }
+  } } @else {
+  <p class="text-center">Loading products...</p>
+  }
 </section>

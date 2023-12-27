@@ -3,5 +3,7 @@
 $index) {
 <a href="#" class="block capitalize whitespace-nowrap mb-2">{{ category }}</a>
 }@empty {
-<p class="text-center">No products found!</p>
-} }
+<p class="text-center">No categories found!</p>
+} } @else {
+<p class="text-center">Loading categories...</p>
+}
