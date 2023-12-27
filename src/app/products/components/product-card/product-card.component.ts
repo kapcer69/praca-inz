@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ProductMapperService } from '../../services/product-mapper.service';
+import { Component, Input } from '@angular/core';
 import { ProductCard } from '../../models/product-card.model';
 import { RouterModule } from '@angular/router';
 
@@ -10,12 +9,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
 })
-export class ProductCardComponent implements OnInit {
+export class ProductCardComponent {
   @Input() product!: ProductCard;
-
-  constructor(private readonly productMapper: ProductMapperService) {}
-
-  ngOnInit(): void {
-    this.product = this.productMapper.mapProductCard(this.product);
-  }
 }

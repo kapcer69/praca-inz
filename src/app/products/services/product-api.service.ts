@@ -8,28 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class ProductApiService {
-  private productsSubject: BehaviorSubject<ProductCard[]> = new BehaviorSubject<
-    ProductCard[]
-  >([]);
-
-  private categoriesSubject: BehaviorSubject<string[]> = new BehaviorSubject<
-    string[]
-  >([]);
-
-  public products$: Observable<ProductCard[]> =
-    this.productsSubject.asObservable();
-
-  public categories$: Observable<string[]> =
-    this.categoriesSubject.asObservable();
-
-  constructor(private readonly http: HttpClient) {
-    this.getAllProducts().subscribe((products) =>
-      this.productsSubject.next(products)
-    );
-    this.getAllCategories().subscribe((categories) =>
-      this.categoriesSubject.next(categories)
-    );
-  }
+  constructor(private readonly http: HttpClient) {}
 
   getAllProducts(): Observable<ProductCard[]> {
     return this.http.get<ProductCard[]>(`${environment.apiBaseUrl}products`);

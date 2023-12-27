@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductCard } from '../../models/product-card.model';
 import { ProductApiService } from '../../services/product-api.service';
@@ -12,7 +12,7 @@ import { ProductApiService } from '../../services/product-api.service';
 })
 export class ProductDetailsComponent implements OnInit {
   productId = 0;
-  product: ProductCard = <ProductCard>{};
+  product!: ProductCard;
 
   constructor(
     private readonly route: ActivatedRoute,

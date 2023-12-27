@@ -1,4 +1,7 @@
 <button class="mb-5 font-semibold">Category</button>
-@for (category of categories; track $index) {
+@if (categories$ | async; as categories) { @for (category of categories; track
+$index) {
 <a href="#" class="block capitalize whitespace-nowrap mb-2">{{ category }}</a>
-}
+}@empty {
+<p class="text-center">No products found!</p>
+} }

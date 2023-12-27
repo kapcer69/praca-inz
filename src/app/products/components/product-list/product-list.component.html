@@ -1,5 +1,8 @@
 <section>
-  @for (product of products; track product.id) {
+  @if (products$ | async; as products) { @for (product of products; track
+  product.id) {
   <app-product-card [product]="product" />
-  }
+  } @empty {
+  <p class="text-center">No products found!</p>
+  } }
 </section>

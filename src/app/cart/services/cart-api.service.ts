@@ -17,4 +17,11 @@ export class CartApiService {
   getCartById(id: number): Observable<CartItem> {
     return this.http.get<CartItem>(`${environment.apiBaseUrl}carts/${id}`);
   }
+
+  addToCart(item: CartItem): Observable<CartItem> {
+    return this.http.post<CartItem>(
+      `${environment.apiBaseUrl}carts/${item.id}`,
+      item
+    );
+  }
 }

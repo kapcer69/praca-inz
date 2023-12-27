@@ -3,6 +3,7 @@ import { ProductCard } from '../../models/product-card.model';
 import { ProductApiService } from '../../services/product-api.service';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
 import { ProductFiltersComponent } from '../../components/product-filters/product-filters.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-page',
@@ -13,17 +14,13 @@ import { ProductFiltersComponent } from '../../components/product-filters/produc
   providers: [ProductApiService],
 })
 export class ProductPageComponent implements OnInit {
-  products!: ProductCard[];
-  categories!: string[];
+  products$!: Observable<ProductCard[]> | null;
+  categories$!: Observable<string[]> | null;
 
   constructor(private readonly productApi: ProductApiService) {}
 
   ngOnInit(): void {
-    this.productApi.products$.subscribe(
-      (products) => (this.products = products)
-    );
-    this.productApi.categories$.subscribe(
-      (categories) => (this.categories = categories)
-    );
+    this.products$ = this.productApi.getAllProducts();
+    this.categories$ = this.productApi.getAllCategories();
   }
 }
