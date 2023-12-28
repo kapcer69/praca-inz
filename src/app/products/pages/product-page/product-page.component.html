@@ -1,2 +1,12 @@
-<app-product-filters [categories$]="categories$" />
-<app-product-list [products$]="products$" />
+@if (vm$ | async; as vm) {
+<app-product-filters
+  [categories]="vm.categories"
+  [isLoading]="vm.isLoading"
+  [error]="vm.error"
+/>
+<app-product-list
+  [products]="vm.products"
+  [isLoading]="vm.isLoading"
+  [error]="vm.error"
+/>
+}

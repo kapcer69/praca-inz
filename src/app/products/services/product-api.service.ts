@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 export class ProductApiService {
   constructor(private readonly http: HttpClient) {}
 
-  getAllProducts(): Observable<ProductCard[]> {
+  getProducts(): Observable<ProductCard[]> {
     return this.http.get<ProductCard[]>(`${environment.apiBaseUrl}products`);
   }
 
@@ -20,7 +20,7 @@ export class ProductApiService {
     );
   }
 
-  getAllCategories(): Observable<string[]> {
+  getCategories(): Observable<string[]> {
     return this.http.get<string[]>(
       `${environment.apiBaseUrl}products/categories`
     );

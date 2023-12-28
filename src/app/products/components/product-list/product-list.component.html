@@ -1,10 +1,9 @@
 <section>
-  @if (products$ | async; as products) { @for (product of products; track
-  product.id) {
-  <app-product-card [product]="product" />
-  } @empty {
-  <p class="text-center">No products found!</p>
-  } } @else {
+  @if (isLoading) {
   <p class="text-center">Loading products...</p>
+  } @if (!error) { @for (product of products; track product.id) {
+  <app-product-card [product]="product" />
+  } } @else {
+  <p class="text-center">{{ error }}</p>
   }
 </section>
