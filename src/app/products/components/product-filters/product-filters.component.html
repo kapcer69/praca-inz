@@ -1,8 +1,8 @@
 <p class="mb-5 font-semibold">Category</p>
 @if (isLoading) {
 <p class="text-center">Loading categories...</p>
-} @if (!error) {
-<a href="#" class="block capitalize whitespace-nowrap mb-2">{{ categories }}</a>
-} @else {
+} @if (!error) { @for (category of categories; track $index) {
+<a href="#" class="block capitalize whitespace-nowrap mb-2">{{ category }}</a>
+} } @else {
 <p class="text-center">{{ error }}</p>
 }

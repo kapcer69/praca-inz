@@ -19,5 +19,6 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.productPageStore.fetchProducts();
+    this.productPageStore.fetchCategories();
   }
 }
